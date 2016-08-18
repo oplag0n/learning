@@ -1,7 +1,8 @@
 import React  from 'react'
 
 import Todo from '../components/Todo'
-export default class Featured extends React.Component {
+
+export default class Todos extends React.Component {
   constructor() {
     super();
     this.state = {

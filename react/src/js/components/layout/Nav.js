@@ -17,8 +17,8 @@ export default class Nav extends React.Component {
   render() {
     const { location } = this.props;
     const { collapsed } = this.state;
-    const featuredClass = location.pathname === "/" ? "active" : "";
-    const archivesClass = location.pathname.match(/^\/archives/) ? "active" : ""; //fixing of routing
+    const todosClass = location.pathname === "/" ? "active" : "";
+    const favoritesClass = location.pathname.match(/^\/favorites/) ? "active" : ""; //fixing of routing
     const settingsClass = location.pathname.match(/^\/settings/) ? "active" : ""; // fixing of routing
     const navClass = collapsed ? "collapse" : "";
 
@@ -39,7 +39,7 @@ export default class Nav extends React.Component {
                 <IndexLink to="/" onClick={this.toggleCollapse.bind(this)}>Todos</IndexLink>
               </li>
               <li activeClassName="active">
-                <Link to="archives" onClick={this.toggleCollapse.bind(this)}>Favorites</Link>
+                <Link to="favorites" onClick={this.toggleCollapse.bind(this)}>Favorites</Link>
               </li>
               <li activeClassName="active">
                 <Link to="settings" onClick={this.toggleCollapse.bind(this)}>Settings</Link>
