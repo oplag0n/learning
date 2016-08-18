@@ -10,7 +10,6 @@ export default class Todos extends React.Component {
         {
           id: 123456789,
           text: "Do More",
-          
           complete: false
         },
         {
@@ -28,9 +27,6 @@ export default class Todos extends React.Component {
     const TodoComponents = todos.map((todo) => {
       return <Todo key={todo.id} {...todo}/>;
     });
-
-    const randomAd = adText[Math.round(Math.random() *(adText.length-1))];
-    console.log("featured");
 
     return (
     <div>
