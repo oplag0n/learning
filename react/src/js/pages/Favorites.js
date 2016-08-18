@@ -1,6 +1,6 @@
 import React  from 'react'
 
-export default class Archives extends React.Component {
+export default class Favorites extends React.Component {
   render() {
     return (
     <div>

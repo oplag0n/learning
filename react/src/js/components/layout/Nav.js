@@ -17,8 +17,8 @@ export default class Nav extends React.Component {
   render() {
     const { location } = this.props;
     const { collapsed } = this.state;
-    const todosClass = location.pathname === "/" ? "active" : "";
-    const favoritesClass = location.pathname.match(/^\/favorites/) ? "active" : ""; //fixing of routing
+    const featuredClass = location.pathname === "/" ? "active" : "";
+    const archivesClass = location.pathname.match(/^\/favorites/) ? "active" : ""; //fixing of routing
     const settingsClass = location.pathname.match(/^\/settings/) ? "active" : ""; // fixing of routing
     const navClass = collapsed ? "collapse" : "";
 

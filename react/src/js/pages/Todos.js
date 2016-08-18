@@ -9,7 +9,8 @@ export default class Todos extends React.Component {
       todos: [
         {
           id: 123456789,
-          text: "Do More"
+          text: "Do More",
+          
           complete: false
         },
         {
