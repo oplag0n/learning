@@ -1,38 +1,39 @@
 import React  from 'react'
 
-import Article from "../components/Article";
-
+import Todo from '../components/Todo'
 export default class Featured extends React.Component {
-  render() {
-    const Articles = [
-      "Some Article",
-      "Some Other Article",
-      "Yet Another Article",
-      "Still More",
-      "Some Article",
-    ].map((title, i) => <Article key={i} title={title}/>);
+  constructor() {
+    super();
+    this.state = {
+      todos: [
+        {
+          id: 123456789,
+          text: "Do More"
+          complete: false
+        },
+        {
+          id: 123456790,
+          text: "Hug Mue",
+          complete: true
+        },
+      ],
+    };
+  }
 
-    const adText = [
-      "Ad spot #1",
-      "Ad spot #2",
-      "Ad spot #3",
-      "Ad spot #4",
-      "Ad spot #5",
-    ];
+  render() {
+    const { todos } = this.state;
+
+    const TodoComponents = todos.map((todo) => {
+      return <Todo key={todo.id} {...todo}/>;
+    });
 
     const randomAd = adText[Math.round(Math.random() *(adText.length-1))];
     console.log("featured");
 
     return (
     <div>
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="well text-center">
-            {randomAd}
-          </div>
-        </div>
-      </div>
-      <div class="row">{Articles}</div>
+      <h1>Todos</h1>
+      <ul>{TodoComponents}</ul>
     </div>
     );
   }
